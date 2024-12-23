@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+
+:root {
+  --primary-color: #3d5cb8;
+  --primary-color-dark: #334c99;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --extra-light: #f1f5f9;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+ /* * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}  */
+
+
+
+
+.btn {
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link a {
+  font-weight: 500;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--text-dark);
+}
+section{
+    margin: 20px;
+    padding:10px;
+}
+.section__container.booking__container {
+    font-family: Arial, sans-serif;
+  }
+  
+/* Styling for the dropdown (To/From) to match the "Add Guests" input */
+.booking__container .input__group select {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--text-dark);
+    appearance: none; /* Hides default dropdown arrow styling */
+    cursor: pointer;
+  }
+  
+  .booking__container .input__group select:focus {
+    border-bottom: 2px solid var(--primary-color-dark);
+  }
+  
+  .booking__container .input__group select option {
+    color: var(--text-dark);
+    background-color: var(--white);
+  }
+  
+  /* Remove browser-specific placeholder for date inputs */
+  .booking__container input[type="date"]::-webkit-datetime-edit-text {
+    display: none;
+  }
+  
+  .booking__container input[type="date"]::-webkit-inner-spin-button,
+  .booking__container input[type="date"]::-webkit-clear-button {
+    display: none;
+  }
+  
+  .booking__container input[type="date"]::-webkit-calendar-picker-indicator {
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+  
+  /* Custom label behavior for both dropdowns and date fields */
+  .booking__container select:focus ~ label,
+  .booking__container select:not([value=""]) ~ label,
+  .booking__container input[type="date"]:focus ~ label,
+  .booking__container input[type="date"]:valid ~ label {
+    font-size: 0.8rem;
+    top: 0;
+  }
+
+
+.booking__container {
+  border-radius: 2rem;
+  border: 1px solid var(--extra-light);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.booking__nav {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  background-color: var(--extra-light);
+  border-radius: 5px;
+}
+
+.booking__nav span {
+  flex: 1;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+} 
+.booking__nav span input[type="radio"] {
+  color:var(--primary-color-dark)
+}
+.booking__nav span input[type="radio"]:checked+span {
+  color: var(--white);
+  background-color:var(--primary-color-dark)
+}
+
+.booking__container form {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 1rem;
+}
+
+.booking__container .input__content {
+  width: 100%;
+}
+
+.booking__container .form__group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.booking__container .form__group span {
+  padding: 10px;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  background-color: var(--extra-light);
+  border-radius: 1rem;
+}
+
+.booking__container .input__group {
+  width: 100%;
+  position: relative;
+}
+
+.booking__container label {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  font-weight: 500;
+  color: var(--text-dark);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.booking__container input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  color: var(--text-dark);
+}
+
+.booking__container input:focus ~ label {
+  font-size: 0.8rem;
+  top: 0;
+}
+
+.booking__container .form__group p {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.booking__container .btn {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+/* .results {
+    background-image: url('/static/Lovepik_com-401713616-airplane-over-the-city.jpg'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 400px;
+    display: none; 
+  } */
+  
+  .results::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensures overlay doesn't block clicks */
+  }
+  
+  .results__div {
+    z-index: 10;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .flights-table {
+    margin: 20px auto;
+    width: 90%;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .flights-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .flights-table th,
+  .flights-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .flights-table th {
+    background-color: #f4f4f4;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  .flights-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  input[type="radio"] {
+    appearance: radio; /* Ensures consistent rendering across browsers */
+    transform: scale(1.2); /* Enlarges the radio button */
+    cursor: pointer; /* Pointer on hover */
+    margin-right: 10px;
+    position: relative;
+    z-index: 1; /* Prevents overlap issues */
+  }
+  
+  button#purchase-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: not-allowed;
+    transition: background-color 0.3s ease, cursor 0.3s ease;
+  }
+  
+  button#purchase-btn:enabled {
+    background-color: #0056b3;
+    cursor: pointer;
+  }
+  
+  .purchase-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .flights-table table {
+      font-size: 12px; /* Smaller font for smaller screens */
+    }
+  
+    #purchase-btn {
+      font-size: 14px; /* Adjust button size */
+      padding: 10px 20px;
+    }
+  }
+@media (width < 1200px) {
+  .section__container.header__container,
+  .section__container.plan__container,
+  .section__container.lounge__container {
+    overflow: hidden;
+  }
+
+  .memories__grid {
+    gap: 3rem;
+  }
+}
+
+@media (width < 900px) {
+  nav .btn {
+    display: none;
+  }
+
+  .booking__container form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+@media (width < 600px) {
+  .nav__links {
+    display: none;
+  }
+
+  .booking__nav span {
+    padding: 1rem 0.5rem;
+  }
+
+  .booking__container form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+
+/* 
+.footer {
+  background-color: var(--primary-color);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 2fr repeat(2, 1fr);
+  gap: 5rem;
+}
+
+.footer__col h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer__col h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer__col p {
+  color: var(--extra-light);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__col p:hover {
+  color: var(--white);
+}
+
+.footer__bar {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--extra-light);
+}
+
+.footer__bar p {
+  font-size: 0.9rem;
+  color: var(--extra-light);
+}
+
+.footer__container {
+  gap: 2rem;
+}
+
+
+@media (width < 600px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__bar {
+    flex-direction: column;
+    text-align: center;
+  }
+} */
