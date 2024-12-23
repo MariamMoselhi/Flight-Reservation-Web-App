@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/reservations.css" />
+    <title>Reservations and tickets | Flivan</title>
+  </head>
+  <style>
+    .ticket__section::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(236, 232, 232, 0.6); /* Lighter fade using white color */
+  z-index: 1;
+}
+.ticket__section{
+  width: 100%;
+  background-image: url("/static/Lovepik_com-401713616-airplane-over-the-city.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 45px;
+
+}
+
+.ticket {
+  margin-top:4rem;
+  justify-self:center;
+  display: flex;
+  width: 700px;
+  height: 400px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  }
+  
+  </style>
+  <body>
+    <nav>
+      <div class="nav__logo">Flivan</div>
+      <ul class="nav__links">
+        <li class="link"><a href="/">Home</a></li>
+        <li class="link"><a href="/book">Booking</a></li>
+        <li class="link"><a href="/registration">Registration</a></li>
+        <li class="link"><a href="/reservations">Reservations</a></li>
+        <li class="link"><a href="/about">About</a></li>
+      </ul>
+      <a href="mailto:mariamalaa@gmail.com?subject=Questions%20&body=My%20Name%20%3A%20%3Cput%20your%20name%20here%3E%0D%0AQuestions%20%3A%20%3Cput%20your%20questions%20here%3E" class="btn">Contact</a>
+    </nav>
+
+    <section class="ticket__section">
+    {% for ticket in tickets %}
+    <div class="ticket">
+        <div class="ticket-left">
+          <h3>Online Flight Booking</h3>
+          <h1 class="class">ECONOMY CLASS</h1>
+          <div class="details">
+            <p><span>Airline:</span> {{ticket[0]}}</p>
+            <p><span>From:</span> {{ticket[1]}}</p>
+            <p><span>To:</span> {{ticket[2]}}</p>
+            <p><span>Passenger:</span> {{ticket[3]}}</p>
+            <!-- <p><span>Board Time:</span> {{tickets[4]}}</p> -->
+            <p><span>Departure Day:</span> {{ticket[4]}}</p>
+            <p><span>Departure Time:</span> {{ticket[5]}}</p>
+            <p><span>Arrival Day:</span> {{ticket[6]}}</p>
+            <p><span>Arrival Time:</span> {{ticket[7]}}</p>
+            <!-- <p><span>Gate:</span> A22</p> -->
+            <p><span>Seat:</span> {{ticket[8]}}</p>
+          </div>
+        </div>
+        <div class="ticket-right">
+          <h1>FLIVAN</h1>
+          <div class="icon">
+            <img src="/static/planeIcon2.png" alt="Plane Icon">
+          </div>
+        </div>
+      </div>
+      <br>
+      {% endfor %}
+
+    </section>
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3>Flivan</h3>
+          <p>
+            Where Excellence Takes Flight. With a strong commitment to customer
+            satisfaction and a passion for air travel, Flivan Airlines offers
+            exceptional service and seamless journeys.
+          </p>
+          <p>
+            From friendly smiles to state-of-the-art aircraft, we connect the
+            world, ensuring safe, comfortable, and unforgettable experiences.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>INFORMATION</h4>
+          <p class="footer_link"><a href="/">Home</a></p>
+          <p class="footer_link"><a href="/about">About</a></p>
+          <p class="footer_link"><a href="/book">Booking</a></p>
+          <p class="footer_link"><a href="/registration">Registration</a></p>
+          <p class="footer_link"><a href="/reservations">Reservations</a></p>
+        </div>
+   
+      </div>
+      <div class="section__container footer__bar">
+        <p>Copyright © 2024. All rights reserved.</p>
+        <div class="socials">
+          <span><i class="ri-facebook-fill"></i></span>
+          <span><i class="ri-twitter-fill"></i></span>
+          <span><i class="ri-instagram-line"></i></span>
+          <span><i class="ri-youtube-fill"></i></span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
